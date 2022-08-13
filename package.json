@@ -1,0 +1,10 @@
+{
+  "name": "@study-sea/tsconfig",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": ["typescript", "tsconfig", "recommended"],
+  "author": "眼圈发黑 <1449826851@qq.com>",
+  "license": "MIT"
+}
