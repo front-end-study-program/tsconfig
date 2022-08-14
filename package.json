@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {},
-  "keywords": ["typescript", "tsconfig", "recommended"],
+  "keywords": [
+    "typescript",
+    "tsconfig",
+    "recommended"
+  ],
   "author": "眼圈发黑 <1449826851@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }
