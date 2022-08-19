@@ -1,3 +1,4 @@
+// http://json.schemastore.org/tsconfig tsconfig 协议
 {
   "extends": "", // 指定要继承的另一个文件配置
 
@@ -11,6 +12,19 @@
   
   "compilerOptions": {
     // 类型检查
-    "allowUnreachableCode": false // 允许无法访问的代码
+    /**
+    * undefined (默认)：警告
+    * false（推荐）：不允许，报错
+    * true：允许
+    */
+    "allowUnreachableCode": false, // 是否允许出现死区代码（永远无法执行的代码）
+    "allowUnusedLabels": false, // 是否允许未使用标签存在
+
+    /*
+    * true（推荐）：启用
+    * false：不启用
+    */
+    "alwaysStrict": true, // 是否在ECMAScript严格模式下解析，并生成 'use strict'
+    "exactOptionalPropertyTypes": true // 是否严格校验可选属性的类型
   }
 }
