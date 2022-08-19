@@ -11,7 +11,7 @@
   "references": [], // 项目引用
   
   "compilerOptions": {
-    // 类型检查
+    // ----------------------------类型检查-------------------------------
     /**
     * undefined (默认)：警告
     * false（推荐）：不允许，报错
@@ -24,7 +24,20 @@
     * true（推荐）：启用
     * false：不启用
     */
-    "alwaysStrict": true, // 是否在ECMAScript严格模式下解析，并生成 'use strict'
-    "exactOptionalPropertyTypes": true // 是否严格校验可选属性的类型
+    "alwaysStrict": true, // 是否在ECMAScript严格模式下解析，并生成 'use strict'，默认同 strict 配置项的值
+    "exactOptionalPropertyTypes": true, // 是否严格校验可选属性的类型，默认 false
+    "noFallthroughCasesInSwitch": true, // 是否禁止 switch 中出现 fallthrough 的 case 语句，switch 语句中，如果一个 case 语句没有 break，那这就是 fallthrough case 语句。默认false
+    "noImplicitAny": true, // 是否禁止出现隐式的 any 类型，默认同 strict 配置项的值
+    "noImplicitOverride": true, // 是否禁止子类隐式覆盖父类的成员，默认 false
+    "noImplicitReturns": true, // 是否禁止隐式的函数返回值，默认 false
+    "noImplicitThis": true, // 是否禁止隐式的 this 指向，默认同 strict 配置项的值
+    "noPropertyAccessFromIndexSignature": true, // 是否禁止从索引签名中用点操作符访问未知属性, 默认 false
+    "noUncheckedIndexedAccess": true, // 是否禁用未知的索引签名属性，默认 false
+    "noUnusedLocals": true, // 禁止未使用的局部变量，默认 false
+    "noUnusedParameters": true, // 禁止未使用的参数, 默认 false
+    "strict": true, // 是否开启 TS 严格模式，默认 false。alwaysStrict、strictNullChecks、strictBindCallApply、strictFunctionTypes、strictPropertyInitializati、noImplicitAny、noImplicitThis、useUnknownInCatchVariables 将与之同步。
+    "strictBindCallApply": true, // 是否开启严格的 .bind, .call, .apply 函数调用，默认同 strict 配置项的值
+    "strictFunctionTypes": true, // 是否开启严格的函数类型检查，仅适用于以函数语法编写的函数，对象中的函数不生效。默认同 strict 配置项的值
+    "strictNullChecks": true, // 是否开启严格的 null 和 undefined 检查，默认同 strict 配置项的值
   }
 }
