@@ -39,5 +39,115 @@
     "strictBindCallApply": true, // 是否开启严格的 .bind, .call, .apply 函数调用，默认同 strict 配置项的值
     "strictFunctionTypes": true, // 是否开启严格的函数类型检查，仅适用于以函数语法编写的函数，对象中的函数不生效。默认同 strict 配置项的值
     "strictNullChecks": true, // 是否开启严格的 null 和 undefined 检查，默认同 strict 配置项的值
+    "strictPropertyInitialization": true, // 是否强制类属性必须初始化，默认同 strict 配置项的值
+    "useUnknownInCatchVariables": true, // 是否默认将 catch 语句的变量上做为 unknown 而不是 any 类型，默认同 strict 配置项的值
+
+
+    // ------------------------------模块--------------------------------------------
+    /*
+    * true：启用
+    * false: 不启用
+    */
+    "allowUmdGlobalAccess": false, // 是否允许访问 UMD 全局变量，默认 false
+
+    "baseUrl": "./", // 设置模块查找的基础路径
+    //  none | commonjs | amd | umd | system | es6/es2015 | es2020 | es2022 | esnext | node16 | nodenext
+    "module": "ESNext", // 设置程序使用的模块规范，默认为 CommonJS
+    // node | (node16 | nodenext) | classic
+    "moduleResolution": "node", // 指定模块解析策略，默认为 classic
+    "moduleSuffixes": [], // 设置要查找模块文件的后缀；先查找设置的值，后查找 .ts
+    "noResolve": false, // 是否不在编译之前解析模块，默认 false
+    "paths": {
+      "@/*": ["src/*"]
+    }, // 设置 TS 系统的路径别名(基于 baseUrl)
+    "resolveJsonModule": false, // 是否允许解析 json 文件作为模块，默认 false
+    "rootDir": "", // 指定输入文件的根目录来控制 outDir 选项的输出目录结构，默认根据输入文件列表自动计算
+    "rootDirs": [], //  指定全局声明文件，支持声明文件包或自定义目录，默认从当前路径往系统根目录查找 node_modules/@types/**
+    "typeRoots": [], // 指定类型声明文件的查找路径，默认为 node_modules/@types
+    // 不支持指定自定义目录路径，只支持指定明确的 npm 安装的声明文件包
+    "types": [], // 指定全局声明文件包列表，只能是已安装的 @types/* 声明文件包，默认从当前路径往系统根目录查找 node_modules/@types/**
+
+
+    // ----------------------------------Emit--------------------------------------
+    "declaration": true, // 是否生成源码对应的声明文件，默认 true(当 composite 为 true 时), 否则为 false
+    "declarationDir": null, // 指定源码声明文件的输出目录
+    "declarationMap": true, // 是否开启声明文件源码映射(SourceMap)，默认 false
+    "downlevelIteration": false, // 是否开启降级的迭代语法，默认 false
+    "emitBOM": false, // 是否生成 BOM，默认 false
+    "emitDeclarationOnly": false, // 是否只生成 .d.ts 声明文件，默认 false
+    "importHelpers": false, // 是否导入辅助函数，默认 false
+    // remove | preserve | error
+    "importsNotUsedAsValues": "remove", // 控制类型导入不能被当成值来使用，默认 remove
+    "inlineSourceMap": false, // 是否开启内联的源码映射(SourceMap)，默认 false
+    "inlineSources": false, // 内联源码映射中是否包括源代码，默认 false
+    "mapRoot": "https://my-website.com/debug/sourcemaps/", // 指定源码映射的路径位置
+    // LF | CRLF
+    "newLine": "crlf", //  指定换新行时使用的行尾序列，根据系统
+    "noEmit": false, // 是否不生成任何文件和代码
+    "noEmitHelpers": false, // 是否不生成运行时辅助函数，默认 false
+    "noEmitOnError": false, // 是否在编译遇到错误时不要退出编译，默认 false
+    "outDir": "dist", // 编译输出目录
+    "outFile": "", // 指定一个名称，并将所有非模块文件输出到这个文件中
+    "preserveConstEnums": false, // 是否保留常量枚举，默认跟随 isolatedModules 选项的值
+    "preserveValueImports": false, // 是否保留 import 但未使用的值
+    "removeComments": true, // 是否在编译时移除注释，默认 false
+    "sourceMap": false, // 是否生成源码映射(SourceMap)，默认 false
+    "sourceRoot": "https://my-website.com/debug/source/", // 指定源码的位置供 debugger 定位源码使用
+    "stripInternal": false, // 移除 JSDoc 中的 @internal 注释，默认 false
+
+
+    // -------------------------------JavaScript支持------------------------------
+    "allowJs": false, // 是否允许在 TS 中导入 JS 文件，默认 false
+    "checkJs": false, // 是否允许 TS 检查 JS 文件，默认 false
+    "maxNodeModuleJsDepth": 0, // 在 node_modules 下搜索和加载 JS 文件的最大依赖深度，默认 0
+
+
+    // -------------------------------编辑器支持----------------------------------
+    "disableSizeLimit": false, // 是否禁用 TS 占用内存上限控制，默认 false
+    "plugins": [], // 编辑器中要运行的语言服务插件列表
+
+
+    // -------------------------------操作约束----------------------------------
+    // 支持 import 引入 commonjs 的包
+    "allowSyntheticDefaultImports": true, // 是否允许合并默认导出
+    "esModuleInterop": true, // 是否支持使用如 import React from 'react' 的方式引入commonjs React包
+    "forceConsistentCasingInFileNames": true, // 是否止对同一个文件的不一致的引用
+    "isolatedModules": true, // 是否将每个文件作为单独的模块
+    "preserveSymlinks": true, // 是否把符号链接解析为其真实路径
+
+
+    // ------------------------------向后兼容-------------------------------------
+    "noImplicitUseStrict": true, // 模块输出是否包含 "use strict" 指令
+    "noStrictGenericChecks": true, // 是否禁用在函数类型里对泛型签名进行严格检查
+    "suppressImplicitAnyIndexErrors": true, // 是否禁用由 noImplicitAny 带来隐式 any 错误提示
+
+
+    // ------------------------------语言环境-------------------------------------
+    "emitDecoratorMetadata": false, // 是否为带有装饰器的声明生成元数据，默认 false
+    "experimentalDecorators": false, // 是否开启使用装饰器
+    // preserve | react | react-native | react-jsx | react-jsxdev
+    "jsx": "preserve", // jsx 编译生成的代码
+    "jsxFactory": "React.createElement", // 指定 jsx 转换后的函数
+    "jsxFragmentFactory": "React.Fragment", // 指定 jsx 中空标签对应的Fragment
+    "jsxImportSource": "react", // 指定用于导入JSX工厂函数
+    "lib": [], // 指定目标运行环境的库声明文件
+    "noLib": false, // 是否禁用任何库文件的声明
+    // auto | legacy | force
+    "moduleDetection": "auto", // 模块检测，默认 auto
+    // es3 | es5 | es6/es2015 | es2016 | es2017 | es2018 | es2019 | es2020 | es2021 | es2022 | esnext
+    "target": "ESNext", // 运行的目标环境， 默认ES3
+    "useDefineForClassFields": false, // 是否将 class 声明中的字段语义从 [[Set]] 变更到 [[Define]]
+    
+
+    // -----------------------------编译器诊断----------------------------------
+    "explainFiles": true, // 是否说明文件
+    "extendedDiagnostics": true, // 是否显示详细的诊断信息
+    "generateCpuProfile": "profile.cpuprofile", // 查看 v8 CPU 配置信息
+    "listEmittedFiles": true, // 是否将编译生成的文件打印到终端
+    "listFiles": true, // 是否打印编译生成的文件名
+    "traceResolution": true, // 是否打印已处理文件的解析过程信息
+
+
+    
   }
 }
