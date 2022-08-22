@@ -151,6 +151,43 @@
     // -----------------------------项目---------------------------------------
     "composite": false, // 是否编译构建引用项目
     "disableReferencedProjectLoad": true, // 是否禁用所有项目自动加载
-    "disableSolutionSearching": true, // 
+    "disableSolutionSearching": false, // 是否禁用编辑器中的定义跳转或查找引用等功能
+    "disableSourceOfProjectReferenceRedirect": false, // 是否禁用原项目引用重定向
+    "incremental": false, // 是否将上次编译的项目图信息保存在磁盘中，默认 composite 为 true 否则 false
+    "tsBuildInfoFile": ".tsbuildinfo", // 指定用于存储编译信息的文件
+
+
+    // ----------------------------输出格式-----------------------------------
+    "noErrorTruncation": false, // 是否不截断错误信息，默认false
+    "preserveWatchOutput": false, // 在监听模式下热更新后是否要清楚终端信息
+    "pretty": true, // 是否对错误和消息进行样式化，默认 true
+
+
+    // ---------------------------完整性----------------------------------
+    "skipLibCheck": false, // 是否跳过声明文件的检查
+
+
+    // ---------------------------监听选项-------------------------------
+    // fixedPollingInterval | priorityPollingInterval | dynamicPriorityPolling | useFsEvents | useFsEventsOnParentDirectory
+    "watchFile": "useFsEvents", // 指定以什么策略来监听文件变动，默认 useFsEvents
+    // fixedPollingInterval | dynamicPriorityPolling | useFsEvents | fixedchunksizepolling
+    "watchDirectory": "useFsEvents", // 指定以什么策略来监听文件夹变动，默认 useFsEvents
+    // fixedPollingInterval | priorityPollingInterval | dynamicPriorityPolling | synchronousWatchDirectory
+    "fallbackPolling": "fixedPollingInterval", // 指定当文件系统事件不支持的 fallback
+    "watchOptions": {
+      "synchronousWatchDirectory": true, // 同步观察目录
+      "excludeDirectories": [], // 排除监听的目录
+      "excludeFiles": [], // 排除监听文件
+    },
+
+
+    // ----------------------------类型获取------------------------------
+    // 针对 JavaScript
+    "typeAcquisition": {
+      "enable": false, // 是否在 JavaScript 中禁用类型获取
+      "include": [], // 指定使用哪些类型声明
+      "exclude": [], // 指定排除哪些类型声明
+      "disableFilenameBasedTypeAcquisition": false, // 是否禁用ts自动推断添加哪些类型
+    }
   }
 }
